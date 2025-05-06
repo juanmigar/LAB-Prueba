@@ -1,6 +1,6 @@
 name: Deploy Infra with Terraform
 
-on:
+on: 
   push:
     branches: 
       - main
