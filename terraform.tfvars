@@ -1,19 +1,7 @@
-# terraform.tfvars
-
+client_id       = "0390f67a-1000-49b0-b928-8db8d915be00"
+tenant_id       = "8d8d0da4-7a1b-4b8a-9900-1cb56400e52f"
 subscription_id = "d19716ea-6e79-435a-b563-2221ae09833f"
-
-# Grupo de recursos
-resource_group_name = "rg-vnet-demo"
-
-# Red virtual
-vnet_name           = "vnet-demo"
-address_space       = ["10.0.0.0/16"]
-
-# Subredes
-subnet1_name        = "subnet1"
-subnet1_address     = "10.0.1.0/24"
-subnet2_name        = "subnet2"
-subnet2_address     = "10.0.2.0/24"
-
-# Reglas del NSG
-nsg_name            = "nsg-demo"
+vnet_name       = "vnet-demo"
+subnet1_name    = "subnet1"
+subnet2_name    = "subnet2"
+location        = "East US"
