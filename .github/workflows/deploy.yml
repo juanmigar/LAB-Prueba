@@ -2,7 +2,7 @@ name: Deploy Infra with Terraform
 
 on:
   push:
-    branches:
+    branches: 
       - main
 
 permissions:
