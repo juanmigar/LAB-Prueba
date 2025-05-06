@@ -1,11 +1,11 @@
-name: Deploy Infra with Terraform 
- 
-on: 
-  push: 
-    branches: 
+name: Deploy Infra with Terraform
+
+on:
+  push:
+    branches:
       - main
 
-permissions: 
+permissions:
   id-token: write
   contents: read
 
@@ -21,7 +21,6 @@ jobs:
         uses: azure/login@v1
         with:
           client-id: ${{ secrets.ARM_AZURE_CLIENT_ID }}
-          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
           tenant-id: ${{ secrets.ARM_AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.ARM_AZURE_SUBSCRIPTION_ID }}
 
@@ -30,15 +29,14 @@ jobs:
         with:
           terraform_version: 1.6.6
 
-      - name: Init Terraform
+      - name: Terraform Init
         run: terraform init
 
-      - name: Validate Terraform
+      - name: Terraform Validate
         run: terraform validate
 
-      - name: Plan Terraform
+      - name: Terraform Plan
         run: terraform plan -input=false
 
-
-      - name: Apply Terraform
+      - name: Terraform Apply
         run: terraform apply -auto-approve
